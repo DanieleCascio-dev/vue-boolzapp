@@ -128,7 +128,7 @@
             <header class="header-chat flex">
               <div class="header-chat-content flex">
                 <div class="header-chat-img">
-                  <img src="img/avatar_1.jpg" alt="" />
+                  <img :src=`img/avatar${contacts[currContact].avatar}.jpg` alt="" />
                 </div>
                 <div class="header-chat-text">
                   <p class="name">{{contacts[currContact].name}}</p>
