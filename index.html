@@ -41,8 +41,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- data -->
-    <script src="js/data.js"></script>
     <!-- VUE SCRIPT -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
@@ -104,17 +102,17 @@
 
             <!-- Contacts -->
             <ul class="contacts flex column">
-              <li class="contact flex">
+              <li v-for="(contact,index) in contacts" class="contact flex">
                 <div class="contact-img">
-                  <img src="img/avatar_1.jpg" alt="" />
+                  <img :src=`img/avatar${contact.avatar}.jpg` alt="" />
                 </div>
                 <div class="contact-info">
-                  <p class="name">Michele</p>
-                  <p class="text">Lorem ipsum dolor sit amet</p>
+                  <p class="name">{{contact.name}}</p>
+                  <p class="text">{{contact.messages[1].message}}</p>
                 </div>
                 <div class="time">16:15</div>
               </li>
-              <li class="contact flex">
+              <!-- <li class="contact flex">
                 <div class="contact-img">
                   <img src="img/avatar_2.jpg" alt="" />
                 </div>
@@ -183,7 +181,7 @@
                   <p class="text">Lorem ipsum dolor sit amet</p>
                 </div>
                 <div class="time">11:15</div>
-              </li>
+              </li> -->
             </ul>
             <!-- Contacts -->
           </div>
@@ -281,8 +279,9 @@
           <!-- Chat -->
         </div>
       </div>
+      <!-- /Background -->
     </div>
-    <!-- /Background -->
+
     <!-- My Script -->
     <script src="js/script.js"></script>
   </body>
