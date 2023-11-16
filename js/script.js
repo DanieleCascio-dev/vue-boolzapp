@@ -169,9 +169,11 @@ const app = createApp({
       currContact: 0,
       userMessage: "",
       messageSent: [],
+      messageRecived: [],
       contactIndex: 0,
-      visible: true,
+      sentMsg: true,
       recived: false,
+      userSearch: "",
     };
   },
   methods: {
@@ -179,8 +181,7 @@ const app = createApp({
       console.log(index);
 
       this.currContact = index;
-      this.visible = !this.visible;
-      this.recived = !this.recived;
+      this.sentMsg = !this.sentMsg;
     },
     sendMessage() {
       this.messageSent.push(this.userMessage);
@@ -191,7 +192,9 @@ const app = createApp({
       }, 1000);
     },
     recivedMessage() {
+      this.messageRecived.push("Ok");
       this.recived = true;
     },
+    findContact() {},
   },
 }).mount("#app");

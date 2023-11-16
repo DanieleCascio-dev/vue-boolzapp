@@ -93,6 +93,8 @@
               <div class="search-elements flex">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input
+                  v-model="userSearch"
+                  @keyup="findContact"
                   type="search"
                   placeholder="Cerca o iniza una nuova chat"
                 />
@@ -177,7 +179,7 @@
               </div>
               <div
                 v-if="messageSent.length > 0"
-                v-show="visible"
+                v-show="sentMsg"
                 v-for="(element, index) in messageSent"
                 class="row flex send"
               >
@@ -193,11 +195,14 @@
                   </div>
                 </div>
               </div>
-              <div v-show="recived" class="row flex recived">
+              <div
+                v-if="messageRecived.length > 0"
+                v-for="(element, index) in messageRecived"
+                v-show="recived"
+                class="row flex recived"
+              >
                 <div class="msg msg-recived">
-                  <p>
-                    ok
-                  </p>
+                  <p>{{element}}</p>
                   <span class="more-options"
                     ><i class="fa-solid fa-angle-down"></i
                   ></span>
@@ -206,7 +211,8 @@
                     <p class="delete">Cancella messaggio</p>
                   </div>
                 </div>
-       <!--   <div class="row flex recived">
+              </div>
+              <!--   <div class="row flex recived">
                 <div class="msg msg-recived">
                   <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
