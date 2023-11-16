@@ -344,7 +344,7 @@ button {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   position: absolute;
   top: 0;
@@ -355,6 +355,7 @@ button {
 
 .more-options .time {
   font-size: 0.6rem;
+  padding: 0.5rem;
 }
 
 .send .more-options:hover + .more {

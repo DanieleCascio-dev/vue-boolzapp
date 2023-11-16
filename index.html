@@ -128,7 +128,8 @@
             <header class="header-chat flex">
               <div class="header-chat-content flex">
                 <div class="header-chat-img">
-                  <img :src=`img/avatar${contacts[currContact].avatar}.jpg` alt="" />
+                  <img :src=`img/avatar${contacts[currContact].avatar}.jpg`
+                  alt="" />
                 </div>
                 <div class="header-chat-text">
                   <p class="name">{{contacts[currContact].name}}</p>
@@ -156,12 +157,32 @@
             <main class="main-chat">
               <div
                 v-for="(message, index) in contacts[currContact].messages"
-                class="row flex"  :class="{'send': message.status === 'sent', 'recived': message.status === 'received'}"
+                class="row flex"
+                :class="{'send': message.status === 'sent', 'recived': message.status === 'received'}"
               >
-                <div class="msg" :class="{'msg-send': message.status === 'sent', 'msg-recived': message.status === 'received'}">
-                  <p>
-                    {{message.message}}
-                  </p>
+                <div
+                  class="msg"
+                  :class="{'msg-send': message.status === 'sent', 'msg-recived': message.status === 'received'}"
+                >
+                  <p>{{message.message}}</p>
+                  <span class="more-options"
+                    ><i class="fa-solid fa-angle-down"></i>
+                    <span class="time">{{message.date}}</span>
+                  </span>
+                  <div class="more flex column">
+                    <p class="info">Info messaggio</p>
+                    <p class="delete">Cancella messaggio</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                v-if="messageSent.length > 0"
+                v-show="visible"
+                v-for="(element, index) in messageSent"
+                class="row flex send"
+              >
+                <div class="msg msg-send">
+                  <p>{{element}}</p>
                   <span class="more-options"
                     ><i class="fa-solid fa-angle-down"></i>
                     <span class="time">15:55</span>
@@ -172,7 +193,20 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="row flex recived">
+              <div v-show="recived" class="row flex recived">
+                <div class="msg msg-recived">
+                  <p>
+                    ok
+                  </p>
+                  <span class="more-options"
+                    ><i class="fa-solid fa-angle-down"></i
+                  ></span>
+                  <div class="more flex column">
+                    <p class="info">Info messaggio</p>
+                    <p class="delete">Cancella messaggio</p>
+                  </div>
+                </div>
+       <!--   <div class="row flex recived">
                 <div class="msg msg-recived">
                   <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -196,18 +230,23 @@
                   <span class="more-options"
                     ><i class="fa-solid fa-angle-down"></i
                   ></span> -->
-                  <div class="more flex column">
+              <!--  <div class="more flex column">
                     <p class="info">Info messaggio</p>
                     <p class="delete">Cancella messaggio</p>
                   </div>
-                </div>
-              </div>
+                </div> -->
+              <!-- </div> -->
             </main>
             <footer class="footer-chat flex">
               <div class="smile">
                 <i class="fa-regular fa-face-smile"></i>
               </div>
-              <input type="text" placeholder="Scrivi un messaggio" />
+              <input
+                v-model="userMessage"
+                type="text"
+                placeholder="Scrivi un messaggio"
+                @keyup.enter="sendMessage"
+              />
               <div class="microphone">
                 <i class="fa-solid fa-microphone"></i>
               </div>

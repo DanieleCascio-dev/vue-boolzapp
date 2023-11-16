@@ -167,12 +167,31 @@ const app = createApp({
         },
       ],
       currContact: 0,
+      userMessage: "",
+      messageSent: [],
+      contactIndex: 0,
+      visible: true,
+      recived: false,
     };
   },
   methods: {
     showChat(index) {
       console.log(index);
+
       this.currContact = index;
+      this.visible = !this.visible;
+      this.recived = !this.recived;
+    },
+    sendMessage() {
+      this.messageSent.push(this.userMessage);
+      console.log(this.messageSent);
+      this.userMessage = "";
+      setTimeout(() => {
+        this.recivedMessage();
+      }, 1000);
+    },
+    recivedMessage() {
+      this.recived = true;
     },
   },
 }).mount("#app");
