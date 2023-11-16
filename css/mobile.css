@@ -1,0 +1,28 @@
+/* 504PX MEDIA QUERY */
+
+.wrapper {
+  height: var(--normal-h);
+  width: var(--normal-w);
+  margin: 0;
+}
+
+/* Menu */
+
+.menu {
+  width: 0%;
+}
+
+/* Chat */
+
+.chat {
+  width: 100%;
+}
+
+.header-chat-options {
+  display: none;
+}
+
+.smile,
+.microphone {
+  display: none;
+}

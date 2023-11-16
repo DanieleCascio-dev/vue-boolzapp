@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolzap</title>
+
+    <!-- Main Style -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Responsive Style -->
+    <!-- DEKSTOP FIRST -->
+    <link
+      rel="stylesheet"
+      href="css/dekstop.css"
+      media="screen and (max-width: 991px)"
+    />
+    <link
+      rel="stylesheet"
+      href="css/tablet.css"
+      media="screen and (max-width: 540px)"
+    />
+    <link
+      rel="stylesheet"
+      href="css/mobile.css"
+      media="screen and (max-width: 504px)"
+    />
+    <!-- Font Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- data -->
+    <script src="js/data.js"></script>
+    <!-- VUE SCRIPT -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Background -->
+      <div class="background">
+        <div class="wrapper flex">
+          <!-- Menu -->
+          <div class="menu flex column">
+            <!-- Header -->
+            <header class="header-menu flex">
+              <div class="header-menu-img">
+                <img src="img/avatar_io.jpg" alt="" />
+              </div>
+              <ul class="menu-btn flex">
+                <li>
+                  <button>
+                    <i class="fa-solid fa-circle-notch"></i>
+                  </button>
+                </li>
+                <li>
+                  <button>
+                    <i class="fa-solid fa-message"></i>
+                  </button>
+                </li>
+                <li>
+                  <button>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                  </button>
+                </li>
+              </ul>
+            </header>
+            <!-- /Header -->
+
+            <!-- Notifications -->
+            <div class="notification flex">
+              <div class="notification-icon flex">
+                <i class="fa-solid fa-bell-slash"></i>
+              </div>
+              <div class="notification-text">
+                <h3>Ricevi notifiche di nuovi messaggi</h3>
+                <p><a href="">Attiva notifiche dekstop</a></p>
+              </div>
+            </div>
+            <!-- /Notifications -->
+
+            <!-- Search -->
+            <div class="search flex">
+              <div class="search-elements flex">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                  type="search"
+                  placeholder="Cerca o iniza una nuova chat"
+                />
+              </div>
+            </div>
+            <!-- /Search -->
+
+            <!-- Contacts -->
+            <ul class="contacts flex column">
+              <li class="contact flex">
+                <div class="contact-img">
+                  <img src="img/avatar_1.jpg" alt="" />
+                </div>
+                <div class="contact-info">
+                  <p class="name">Michele</p>
+                  <p class="text">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="time">16:15</div>
+              </li>
+              <li class="contact flex">
+                <div class="contact-img">
+                  <img src="img/avatar_2.jpg" alt="" />
+                </div>
+                <div class="contact-info">
+                  <p class="name">Fabio</p>
+                  <p class="text">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="time">16:01</div>
+              </li>
+              <li class="contact flex">
+                <div class="contact-img">
+                  <img src="img/avatar_3.jpg" alt="" />
+                </div>
+                <div class="contact-info">
+                  <p class="name">Samuele</p>
+                  <p class="text">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="time">15:45</div>
+              </li>
+              <li class="contact flex">
+                <div class="contact-img">
+                  <img src="img/avatar_4.jpg" alt="" />
+                </div>
+                <div class="contact-info">
+                  <p class="name">Alessandro B.</p>
+                  <p class="text">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="time">15:32</div>
+              </li>
+              <li class="contact flex">
+                <div class="contact-img">
+                  <img src="img/avatar_5.jpg" alt="" />
+                </div>
+                <div class="contact-info">
+                  <p class="name">Alessandro L.</p>
+                  <p class="text">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="time">15:15</div>
+              </li>
+              <li class="contact flex">
+                <div class="contact-img">
+                  <img src="img/avatar_6.jpg" alt="" />
+                </div>
+                <div class="contact-info">
+                  <p class="name">Claudia</p>
+                  <p class="text">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="time">15:11</div>
+              </li>
+              <li class="contact flex">
+                <div class="contact-img">
+                  <img src="img/avatar_7.jpg" alt="" />
+                </div>
+                <div class="contact-info">
+                  <p class="name">Federico</p>
+                  <p class="text">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="time">14:55</div>
+              </li>
+              <li class="contact flex">
+                <div class="contact-img">
+                  <img src="img/avatar_8.jpg" alt="" />
+                </div>
+                <div class="contact-info">
+                  <p class="name">Giulio</p>
+                  <p class="text">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="time">11:15</div>
+              </li>
+            </ul>
+            <!-- Contacts -->
+          </div>
+          <!-- Menu -->
+
+          <!-- Chat -->
+          <div class="chat flex column">
+            <header class="header-chat flex">
+              <div class="header-chat-content flex">
+                <div class="header-chat-img">
+                  <img src="img/avatar_1.jpg" alt="" />
+                </div>
+                <div class="header-chat-text">
+                  <p class="name">Michele</p>
+                  <p class="text">Ultimo accesso oggi alle 16:26</p>
+                </div>
+              </div>
+              <ul class="header-chat-options flex">
+                <li>
+                  <button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                </li>
+                <li>
+                  <button>
+                    <i class="fa-solid fa-paperclip"></i>
+                  </button>
+                </li>
+                <li>
+                  <button>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                  </button>
+                </li>
+              </ul>
+            </header>
+            <main class="main-chat">
+              <div class="row flex send">
+                <div class="msg msg-send">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Alias optio neque eius autem obcaecati. Omnis dignissimos,
+                    tempora exercitationem quasi.
+                  </p>
+                  <span class="more-options"
+                    ><i class="fa-solid fa-angle-down"></i>
+                    <span class="time">15:55</span>
+                  </span>
+                  <div class="more flex column">
+                    <p class="info">Info messaggio</p>
+                    <p class="delete">Cancella messaggio</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row flex recived">
+                <div class="msg msg-recived">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Ipsum rem amet dicta quod mollitia.
+                  </p>
+                  <span class="more-options"
+                    ><i class="fa-solid fa-angle-down"></i
+                  ></span>
+                  <div class="more flex column">
+                    <p class="info">Info messaggio</p>
+                    <p class="delete">Cancella messaggio</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row flex recived">
+                <div class="msg msg-recived">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Ipsum rem amet dicta quod mollitia.
+                  </p>
+                  <span class="more-options"
+                    ><i class="fa-solid fa-angle-down"></i
+                  ></span>
+                  <div class="more flex column">
+                    <p class="info">Info messaggio</p>
+                    <p class="delete">Cancella messaggio</p>
+                  </div>
+                </div>
+              </div>
+            </main>
+            <footer class="footer-chat flex">
+              <div class="smile">
+                <i class="fa-regular fa-face-smile"></i>
+              </div>
+              <input type="text" placeholder="Scrivi un messaggio" />
+              <div class="microphone">
+                <i class="fa-solid fa-microphone"></i>
+              </div>
+            </footer>
+          </div>
+          <!-- Chat -->
+        </div>
+      </div>
+    </div>
+    <!-- /Background -->
+    <!-- My Script -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

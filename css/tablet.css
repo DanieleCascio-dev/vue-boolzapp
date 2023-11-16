@@ -1,0 +1,80 @@
+/* 540px MEDIA QUERY */
+
+/* COMMON */
+.wrapper {
+  height: var(--normal-h);
+  width: var(--normal-w);
+  margin: 0;
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+  padding: 0rem;
+  background: none;
+}
+
+/* Menu */
+
+.menu {
+  width: var(--menu-size-tb);
+}
+
+.header-menu {
+  padding: 2rem 0.5rem;
+  justify-content: center;
+}
+
+.header-menu-img {
+  padding: 0.5rem 0;
+  width: 80%;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.notification {
+  display: none;
+}
+
+.search {
+  display: none;
+}
+
+.contacts {
+  height: calc(100% - 3rem);
+}
+
+.contact {
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0.5rem;
+}
+
+.contact-img {
+  padding: 0.5rem 0;
+  width: 80%;
+}
+
+.contact-info {
+  display: none;
+}
+
+.contact .time {
+  display: none;
+}
+
+/* Chat */
+.chat {
+  width: calc(100% - var(--menu-size-tb));
+}
+
+.header-chat {
+  padding: 2rem 0.5rem;
+}
+
+.header-chat-img {
+  width: 15%;
+  min-width: 49px;
+}
