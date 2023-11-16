@@ -166,6 +166,13 @@ const app = createApp({
           ],
         },
       ],
-    }
+      currContact: 0,
+    };
+  },
+  methods: {
+    showChat(index) {
+      console.log(index);
+      this.currContact = index;
+    },
   },
 }).mount("#app");

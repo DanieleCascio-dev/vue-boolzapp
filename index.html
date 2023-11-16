@@ -102,86 +102,22 @@
 
             <!-- Contacts -->
             <ul class="contacts flex column">
-              <li v-for="(contact,index) in contacts" class="contact flex">
+              <li
+                v-for="(contact, index) in contacts"
+                @click="showChat(index)"
+                class="contact flex"
+              >
                 <div class="contact-img">
                   <img :src=`img/avatar${contact.avatar}.jpg` alt="" />
                 </div>
                 <div class="contact-info">
                   <p class="name">{{contact.name}}</p>
-                  <p class="text">{{contact.messages[1].message}}</p>
+                  <p class="text">
+                    {{contact.messages[contact.messages.length - 1].message}}
+                  </p>
                 </div>
                 <div class="time">16:15</div>
               </li>
-              <!-- <li class="contact flex">
-                <div class="contact-img">
-                  <img src="img/avatar_2.jpg" alt="" />
-                </div>
-                <div class="contact-info">
-                  <p class="name">Fabio</p>
-                  <p class="text">Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="time">16:01</div>
-              </li>
-              <li class="contact flex">
-                <div class="contact-img">
-                  <img src="img/avatar_3.jpg" alt="" />
-                </div>
-                <div class="contact-info">
-                  <p class="name">Samuele</p>
-                  <p class="text">Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="time">15:45</div>
-              </li>
-              <li class="contact flex">
-                <div class="contact-img">
-                  <img src="img/avatar_4.jpg" alt="" />
-                </div>
-                <div class="contact-info">
-                  <p class="name">Alessandro B.</p>
-                  <p class="text">Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="time">15:32</div>
-              </li>
-              <li class="contact flex">
-                <div class="contact-img">
-                  <img src="img/avatar_5.jpg" alt="" />
-                </div>
-                <div class="contact-info">
-                  <p class="name">Alessandro L.</p>
-                  <p class="text">Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="time">15:15</div>
-              </li>
-              <li class="contact flex">
-                <div class="contact-img">
-                  <img src="img/avatar_6.jpg" alt="" />
-                </div>
-                <div class="contact-info">
-                  <p class="name">Claudia</p>
-                  <p class="text">Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="time">15:11</div>
-              </li>
-              <li class="contact flex">
-                <div class="contact-img">
-                  <img src="img/avatar_7.jpg" alt="" />
-                </div>
-                <div class="contact-info">
-                  <p class="name">Federico</p>
-                  <p class="text">Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="time">14:55</div>
-              </li>
-              <li class="contact flex">
-                <div class="contact-img">
-                  <img src="img/avatar_8.jpg" alt="" />
-                </div>
-                <div class="contact-info">
-                  <p class="name">Giulio</p>
-                  <p class="text">Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="time">11:15</div>
-              </li> -->
             </ul>
             <!-- Contacts -->
           </div>
@@ -195,7 +131,7 @@
                   <img src="img/avatar_1.jpg" alt="" />
                 </div>
                 <div class="header-chat-text">
-                  <p class="name">Michele</p>
+                  <p class="name">{{contacts[currContact].name}}</p>
                   <p class="text">Ultimo accesso oggi alle 16:26</p>
                 </div>
               </div>
@@ -218,12 +154,13 @@
               </ul>
             </header>
             <main class="main-chat">
-              <div class="row flex send">
-                <div class="msg msg-send">
+              <div
+                v-for="(message, index) in contacts[currContact].messages"
+                class="row flex"  :class="{'send': message.status === 'sent', 'recived': message.status === 'received'}"
+              >
+                <div class="msg" :class="{'msg-send': message.status === 'sent', 'msg-recived': message.status === 'received'}">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Alias optio neque eius autem obcaecati. Omnis dignissimos,
-                    tempora exercitationem quasi.
+                    {{message.message}}
                   </p>
                   <span class="more-options"
                     ><i class="fa-solid fa-angle-down"></i>
@@ -235,7 +172,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row flex recived">
+              <!-- <div class="row flex recived">
                 <div class="msg msg-recived">
                   <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -258,7 +195,7 @@
                   </p>
                   <span class="more-options"
                     ><i class="fa-solid fa-angle-down"></i
-                  ></span>
+                  ></span> -->
                   <div class="more flex column">
                     <p class="info">Info messaggio</p>
                     <p class="delete">Cancella messaggio</p>
