@@ -1,5 +1,7 @@
 const { createApp } = Vue;
 
+const dt = luxon.DateTime;
+
 const app = createApp({
   data() {
     return {
@@ -181,6 +183,7 @@ const app = createApp({
         date: "10/01/2020 15:54:00",
         message: this.userMessage,
         status: "sent",
+        showOptions: false,
       });
 
       this.userMessage = "";
@@ -193,6 +196,7 @@ const app = createApp({
         date: "10/01/2020 15:54:00",
         message: "Ok",
         status: "received",
+        showOptions: false,
       });
     },
     findContact() {
@@ -205,6 +209,9 @@ const app = createApp({
           name.visible = false;
         }
       });
+    },
+    deleteMessage(message) {
+      console.log(message);
     },
   },
 }).mount("#app");

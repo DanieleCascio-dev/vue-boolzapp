@@ -171,82 +171,15 @@
                   <span class="more-options"
                     ><i class="fa-solid fa-angle-down"></i>
                     <span class="time">{{message.date}}</span>
+                    <div class="more flex column">
+                      <p class="info">Info messaggio</p>
+                      <p class="delete" @click="deleteMessage(message)">
+                        Cancella messaggio
+                      </p>
                   </span>
-                  <div class="more flex column">
-                    <p class="info">Info messaggio</p>
-                    <p class="delete">Cancella messaggio</p>
                   </div>
                 </div>
               </div>
-              <!--               <div
-                v-for="(element, index) in messageSentRecived"
-                class="row flex"
-                :class="{'send': element !== 'Ok', 'recived': element === 'Ok'}"
-              >
-                <div
-                  class="msg"
-                  :class="{'msg-send': element !== 'Ok', 'msg-recived': element === 'Ok'}"
-                >
-                  <p>{{element}}</p>
-                  <span class="more-options"
-                    ><i class="fa-solid fa-angle-down"></i>
-                    <span class="time">15:55</span>
-                  </span>
-                  <div class="more flex column">
-                    <p class="info">Info messaggio</p>
-                    <p class="delete">Cancella messaggio</p>
-                  </div>
-                </div>
-              </div> -->
-
-              <!-- <div
-                v-if="messageRecived.length > 0"
-                v-for="(element, index) in messageRecived"
-                v-show="recived"
-                class="row flex recived"
-              >
-                <div class="msg msg-recived">
-                  <p>{{element}}</p>
-                  <span class="more-options"
-                    ><i class="fa-solid fa-angle-down"></i
-                  ></span>
-                  <div class="more flex column">
-                    <p class="info">Info messaggio</p>
-                    <p class="delete">Cancella messaggio</p>
-                  </div>
-                </div>
-              </div> -->
-
-              <!--   <div class="row flex recived">
-                <div class="msg msg-recived">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Ipsum rem amet dicta quod mollitia.
-                  </p>
-                  <span class="more-options"
-                    ><i class="fa-solid fa-angle-down"></i
-                  ></span>
-                  <div class="more flex column">
-                    <p class="info">Info messaggio</p>
-                    <p class="delete">Cancella messaggio</p>
-                  </div>
-                </div>
-              </div>
-              <div class="row flex recived">
-                <div class="msg msg-recived">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Ipsum rem amet dicta quod mollitia.
-                  </p>
-                  <span class="more-options"
-                    ><i class="fa-solid fa-angle-down"></i
-                  ></span> -->
-              <!--  <div class="more flex column">
-                    <p class="info">Info messaggio</p>
-                    <p class="delete">Cancella messaggio</p>
-                  </div>
-                </div> -->
-              <!-- </div> -->
             </main>
             <footer class="footer-chat flex">
               <div class="smile">
@@ -268,6 +201,9 @@
       </div>
       <!-- /Background -->
     </div>
+
+    <!-- Luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
 
     <!-- My Script -->
     <script src="js/script.js"></script>

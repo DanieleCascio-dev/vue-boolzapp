@@ -359,17 +359,27 @@ button {
   padding: 0.5rem;
 }
 
-.send .more-options:hover + .more {
+.send .more-options:hover > .more {
   display: flex;
+  z-index: 10;
 }
 
-.recived .more-options:hover + .more {
+.recived .more-options:hover > .more {
   display: flex;
+  z-index: 10;
+}
+
+.more .info:hover,
+.more .delete:hover {
+  cursor: pointer;
+  background-color: rgba(184, 227, 241, 0.613);
+  border-radius: 30px;
 }
 
 .more {
   width: 130px;
   background-color: white;
+  color: var(--dgrey);
   gap: 0.7rem;
   padding: 0.5rem;
   font-size: 0.8rem;
