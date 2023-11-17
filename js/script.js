@@ -193,7 +193,7 @@ const app = createApp({
     },
     recivedMessage() {
       this.contacts[this.currContact].messages.push({
-        date: "10/01/2020 15:54:00",
+        date: this.actualTime(),
         message: "Ok",
         status: "received",
         showOptions: false,
@@ -212,6 +212,17 @@ const app = createApp({
     },
     deleteMessage(message) {
       console.log(message);
+      message.message = "Messaggio cancellato";
+    },
+    dateToHourMin(fulldate) {
+      const luxonDate = dt.fromFormat(fulldate, "dd/MM/yyyy HH:mm:ss");
+      return luxonDate.toFormat("HH:mm");
+    },
+    actualTime() {
+      let now = dt.now();
+      return now.hour, now.minutes;
     },
   },
 }).mount("#app");
+
+console.log(dt.now());
