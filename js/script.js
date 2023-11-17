@@ -194,8 +194,17 @@ const app = createApp({
         message: "Ok",
         status: "received",
       });
-      /* this.recived = true; */
     },
-    findContact() {},
+    findContact() {
+      let search = this.userSearch.toLowerCase();
+      console.log(search);
+      this.contacts.forEach((name) => {
+        if (name.name.toLowerCase().includes(search)) {
+          name.visible = true;
+        } else {
+          name.visible = false;
+        }
+      });
+    },
   },
 }).mount("#app");

@@ -93,7 +93,7 @@
               <div class="search-elements flex">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input
-                  v-model="userSearch"
+                  v-model.trime="userSearch"
                   @keyup="findContact"
                   type="search"
                   placeholder="Cerca o iniza una nuova chat"
@@ -106,6 +106,7 @@
             <ul class="contacts flex column">
               <li
                 v-for="(contact, index) in contacts"
+                v-show="contact.visible"
                 @click="showChat(index)"
                 class="contact flex"
               >
