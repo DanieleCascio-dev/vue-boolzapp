@@ -193,7 +193,7 @@ const app = createApp({
     },
     recivedMessage() {
       this.contacts[this.currContact].messages.push({
-        date: this.actualTime(),
+        date: "10/01/2020 15:54:00",
         message: "Ok",
         status: "received",
         showOptions: false,
