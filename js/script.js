@@ -168,32 +168,33 @@ const app = createApp({
       ],
       currContact: 0,
       userMessage: "",
-      messageSent: [],
-      messageRecived: [],
-      contactIndex: 0,
-      sentMsg: true,
-      recived: false,
       userSearch: "",
     };
   },
   methods: {
     showChat(index) {
       console.log(index);
-
       this.currContact = index;
-      this.sentMsg = !this.sentMsg;
     },
     sendMessage() {
-      this.messageSent.push(this.userMessage);
-      console.log(this.messageSent);
+      this.contacts[this.currContact].messages.push({
+        date: "10/01/2020 15:54:00",
+        message: this.userMessage,
+        status: "sent",
+      });
+
       this.userMessage = "";
       setTimeout(() => {
         this.recivedMessage();
       }, 1000);
     },
     recivedMessage() {
-      this.messageRecived.push("Ok");
-      this.recived = true;
+      this.contacts[this.currContact].messages.push({
+        date: "10/01/2020 15:54:00",
+        message: "Ok",
+        status: "received",
+      });
+      /* this.recived = true; */
     },
     findContact() {},
   },

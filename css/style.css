@@ -280,6 +280,7 @@ button {
 .header-chat-img img {
   border-radius: 50%;
   object-fit: cover;
+  max-width: 40px;
 }
 
 .header-chat-text {

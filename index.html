@@ -177,13 +177,15 @@
                   </div>
                 </div>
               </div>
-              <div
-                v-if="messageSent.length > 0"
-                v-show="sentMsg"
-                v-for="(element, index) in messageSent"
-                class="row flex send"
+              <!--               <div
+                v-for="(element, index) in messageSentRecived"
+                class="row flex"
+                :class="{'send': element !== 'Ok', 'recived': element === 'Ok'}"
               >
-                <div class="msg msg-send">
+                <div
+                  class="msg"
+                  :class="{'msg-send': element !== 'Ok', 'msg-recived': element === 'Ok'}"
+                >
                   <p>{{element}}</p>
                   <span class="more-options"
                     ><i class="fa-solid fa-angle-down"></i>
@@ -194,8 +196,9 @@
                     <p class="delete">Cancella messaggio</p>
                   </div>
                 </div>
-              </div>
-              <div
+              </div> -->
+
+              <!-- <div
                 v-if="messageRecived.length > 0"
                 v-for="(element, index) in messageRecived"
                 v-show="recived"
@@ -211,7 +214,8 @@
                     <p class="delete">Cancella messaggio</p>
                   </div>
                 </div>
-              </div>
+              </div> -->
+
               <!--   <div class="row flex recived">
                 <div class="msg msg-recived">
                   <p>
