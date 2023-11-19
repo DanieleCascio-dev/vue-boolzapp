@@ -194,9 +194,9 @@
                 placeholder="Scrivi un messaggio"
                 @keyup.enter="sendMessage"
               />
-              <div class="microphone">
+              <div class="footer-chat-icons">
                 <i class="fa-solid fa-microphone" v-show="userMessage === ''"></i>
-                <i class="fa-solid fa-paper-plane" v-show="userMessage !== ''"></i>
+                <i class="fa-solid fa-paper-plane" v-show="userMessage !== ''" @click="sendMessage"></i>
               </div>
             </footer>
           </div>

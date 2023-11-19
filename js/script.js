@@ -1705,7 +1705,6 @@ const app = createApp({
       userSearch: "",
       emojisArray: emojis,
       emojiStatus: false,
-      typing: false,
     };
   },
   methods: {

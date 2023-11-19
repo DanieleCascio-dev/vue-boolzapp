@@ -436,3 +436,7 @@ button {
 .emoji span:hover {
   cursor: pointer;
 }
+
+.footer-chat-icons > i {
+  cursor: pointer;
+}
