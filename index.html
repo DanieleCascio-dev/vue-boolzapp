@@ -182,7 +182,10 @@
               </div>
             </main>
             <footer class="footer-chat flex">
-              <div class="smile">
+              <div v-show="emojiStatus" class="emoji" @keyup.enter="sendMessage" >
+                <span v-for="(emoji, index) in emojisArray" @click="addToMessages(emoji,index)">{{emoji}}</span>
+              </div>
+              <div class="smile" @click="showEmoji">
                 <i class="fa-regular fa-face-smile"></i>
               </div>
               <input
@@ -192,7 +195,8 @@
                 @keyup.enter="sendMessage"
               />
               <div class="microphone">
-                <i class="fa-solid fa-microphone"></i>
+                <i class="fa-solid fa-microphone" v-show="userMessage === ''"></i>
+                <i class="fa-solid fa-paper-plane" v-show="userMessage !== ''"></i>
               </div>
             </footer>
           </div>

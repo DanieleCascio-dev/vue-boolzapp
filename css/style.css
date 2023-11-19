@@ -401,6 +401,7 @@ button {
   padding: 0.5rem;
   gap: 1rem;
   align-items: center;
+  position: relative;
 }
 
 .footer-chat input {
@@ -411,4 +412,27 @@ button {
 
 .footer-chat i {
   color: var(--icon-footer);
+}
+
+.emoji {
+  width: 100%;
+  height: 150px;
+  background-color: var(--grey-bg);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+  position: absolute;
+  top: -150px;
+  left: 0;
+  gap: 0.2rem;
+}
+
+.emoji span {
+  width: calc(100% / 15);
+}
+
+.emoji span:hover {
+  cursor: pointer;
 }
