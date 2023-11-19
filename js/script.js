@@ -1728,7 +1728,7 @@ const app = createApp({
     recivedMessage() {
       this.contacts[this.currContact].messages.push({
         date: `${this.actualTime()}`,
-        message: "Ok",
+        message: this.responsePool(),
         status: "received",
         showOptions: false,
       });
@@ -1754,14 +1754,6 @@ const app = createApp({
     },
     actualTime() {
       let now = dt.now();
-
-      // console.log(now.day.toString());
-      // console.log(now.month.toString());
-      // console.log(now.year.toString());
-      // console.log(now.hour.toString());
-      // console.log(now.minute.toString());
-      // console.log(now.second.toString());
-
       return `${now.day.toString()}/${now.month.toString()}/${now.year.toString()} ${now.hour.toString()}:${now.minute.toString()}:${now.minute.toString()}`;
       /* return now; */
     },
@@ -1770,6 +1762,17 @@ const app = createApp({
     },
     addToMessages(emoji, index) {
       this.userMessage = this.userMessage + emoji;
+    },
+    responsePool() {
+      const answer = [
+        "Ok",
+        "Va bene",
+        "A dopo allora",
+        "Mi stanno chiamando, ti rispondo dopo",
+      ];
+      const rndNum = Math.floor(Math.random() * answer.length - 1 + 1);
+      console.log(rndNum);
+      return answer[rndNum];
     },
   },
 }).mount("#app");
