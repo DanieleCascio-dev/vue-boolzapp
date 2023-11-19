@@ -180,7 +180,7 @@ const app = createApp({
     },
     sendMessage() {
       this.contacts[this.currContact].messages.push({
-        date: "10/01/2020 15:54:00",
+        date: `${this.actualTime()}`,
         message: this.userMessage,
         status: "sent",
         showOptions: false,
@@ -193,7 +193,7 @@ const app = createApp({
     },
     recivedMessage() {
       this.contacts[this.currContact].messages.push({
-        date: "10/01/2020 15:54:00",
+        date: `${this.actualTime()}`,
         message: "Ok",
         status: "received",
         showOptions: false,
@@ -220,7 +220,16 @@ const app = createApp({
     },
     actualTime() {
       let now = dt.now();
-      return now.hour, now.minutes;
+
+      console.log(now.day.toString());
+      console.log(now.month.toString());
+      console.log(now.year.toString());
+      console.log(now.hour.toString());
+      console.log(now.minute.toString());
+      console.log(now.second.toString());
+
+      return `${now.day.toString()}/${now.month.toString()}/${now.year.toString()} ${now.hour.toString()}:${now.minute.toString()}:${now.minute.toString()}`;
+      /* return now; */
     },
   },
 }).mount("#app");
