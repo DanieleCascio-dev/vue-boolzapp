@@ -1750,11 +1750,15 @@ const app = createApp({
     },
     dateToHourMin(fulldate) {
       const luxonDate = dt.fromFormat(fulldate, "dd/MM/yyyy HH:mm:ss");
+      console.log(luxonDate.toFormat("HH:mm"));
       return luxonDate.toFormat("HH:mm");
     },
     actualTime() {
       let now = dt.now();
-      return `${now.day.toString()}/${now.month.toString()}/${now.year.toString()} ${now.hour.toString()}:${now.minute.toString()}:${now.minute.toString()}`;
+      console.log(
+        `${now.day.toString()}/${now.month.toString()}/${now.year.toString()} ${now.hour.toString()}:${now.minute.toString()}:${now.second.toString()}`
+      );
+      return `${now.day.toString()}/${now.month.toString()}/${now.year.toString()} ${now.hour.toString()}:${now.minute.toString()}:${now.second.toString()}`;
       /* return now; */
     },
     showEmoji() {
