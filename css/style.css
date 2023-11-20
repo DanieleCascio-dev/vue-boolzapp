@@ -225,6 +225,7 @@ button {
 
 .contact-img {
   width: 15%;
+  min-width: 30px;
 }
 
 .contact-img img {
