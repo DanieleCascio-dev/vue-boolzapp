@@ -1713,6 +1713,9 @@ const app = createApp({
       this.currContact = index;
     },
     sendMessage() {
+      if (this.userMessage.trim() === "") {
+        return;
+      }
       this.contacts[this.currContact].messages.push({
         date: `${this.actualTime()}`,
         message: this.userMessage,
