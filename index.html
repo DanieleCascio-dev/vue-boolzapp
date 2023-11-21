@@ -119,7 +119,7 @@
                     {{contact.messages[contact.messages.length - 1].message}}
                   </p>
                 </div>
-                <div class="time">{{(contact.messages[contact.messages.length - 1].date)}}</div>
+                <div class="time">{{dateToHourMin((contact.messages[contact.messages.length - 1].date))}}</div>
               </li>
             </ul>
             <!-- Contacts -->
@@ -170,7 +170,7 @@
                   <p>{{message.message}}</p>
                   <span class="more-options"
                     ><i class="fa-solid fa-angle-down"></i>
-                    <span class="time">{{message.date}}</span>
+                    <span class="time">{{dateToHourMin(message.date)}}</span>
                     <div class="more flex column">
                       <p class="info">Info messaggio</p>
                       <p class="delete" @click="deleteMessage(message)">

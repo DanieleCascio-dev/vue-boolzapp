@@ -1717,7 +1717,7 @@ const app = createApp({
         return;
       }
       this.contacts[this.currContact].messages.push({
-        date: `${this.actualTime()}`,
+        date: dt.now().toFormat("dd/MM/yyyy HH:mm:ss"),
         message: this.userMessage,
         status: "sent",
         showOptions: false,
@@ -1730,7 +1730,7 @@ const app = createApp({
     },
     recivedMessage() {
       this.contacts[this.currContact].messages.push({
-        date: `${this.actualTime()}`,
+        date: dt.now().toFormat("dd/MM/yyyy HH:mm:ss"),
         message: this.responsePool(),
         status: "received",
         showOptions: false,
