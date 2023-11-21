@@ -1722,14 +1722,14 @@ const app = createApp({
         status: "sent",
         showOptions: false,
       });
-
+      const replyIndex = this.currContact;
       this.userMessage = "";
       setTimeout(() => {
-        this.recivedMessage();
+        this.recivedMessage(replyIndex);
       }, 1000);
     },
-    recivedMessage() {
-      this.contacts[this.currContact].messages.push({
+    recivedMessage(replyIndex) {
+      this.contacts[replyIndex].messages.push({
         date: dt.now().toFormat("dd/MM/yyyy HH:mm:ss"),
         message: this.responsePool(),
         status: "received",
@@ -1748,19 +1748,19 @@ const app = createApp({
       });
     },
     deleteMessage(message) {
-      console.log(message);
+      // console.log(message);
       message.message = "Messaggio cancellato";
     },
     dateToHourMin(fulldate) {
       const luxonDate = dt.fromFormat(fulldate, "dd/MM/yyyy HH:mm:ss");
-      console.log(luxonDate.toFormat("HH:mm"));
+      // console.log(luxonDate.toFormat("HH:mm"));
       return luxonDate.toFormat("HH:mm");
     },
     actualTime() {
       let now = dt.now();
-      console.log(
-        `${now.day.toString()}/${now.month.toString()}/${now.year.toString()} ${now.hour.toString()}:${now.minute.toString()}:${now.second.toString()}`
-      );
+      // console.log(
+      //   `${now.day.toString()}/${now.month.toString()}/${now.year.toString()} ${now.hour.toString()}:${now.minute.toString()}:${now.second.toString()}`
+      // );
       return `${now.day.toString()}/${now.month.toString()}/${now.year.toString()} ${now.hour.toString()}:${now.minute.toString()}:${now.second.toString()}`;
       /* return now; */
     },
@@ -1778,7 +1778,7 @@ const app = createApp({
         "Mi stanno chiamando, ti rispondo dopo",
       ];
       const rndNum = Math.floor(Math.random() * answer.length - 1 + 1);
-      console.log(rndNum);
+      // console.log(rndNum);
       return answer[rndNum];
     },
   },
